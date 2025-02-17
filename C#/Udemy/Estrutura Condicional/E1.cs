@@ -7,11 +7,11 @@ namespace Course {
             Console.WriteLine("Digite um número inteiro: ");
             int numero = int.Parse(Console.ReadLine());
 
-            if (numero % 2 == 0)
-                Console.WriteLine("O número digitado é par!");
+            if (numero >= 0)
+                Console.WriteLine("O número digitado é positivo!");
 
             else
-                Console.WriteLine("O número digitado é ímpar!");
+                Console.WriteLine("O número digitado é negativo!");
         }   
     }
 }
