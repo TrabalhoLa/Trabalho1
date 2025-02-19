@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 namespace Course {
@@ -9,13 +9,12 @@ namespace Course {
             Console.Write("Digite o nome do aluno: ");
             aluno.nome = Console.ReadLine();
 
-            Console.WriteLine("Digite as três notas dos alunos: ");
-            
+            Console.WriteLine("Digite as três notas dos alunos separadas por espaço:");
             string[] notas = Console.ReadLine().Split(' ');
-            aluno.nota[0] = double.Parse(notas[0], CultureInfo.InvariantCulture);
-            aluno.nota[1] = double.Parse(notas[1], CultureInfo.InvariantCulture);
-            aluno.nota[2] = double.Parse(notas[2], CultureInfo.InvariantCulture);
 
+            for (int i = 0; i < 3; i++)
+                aluno.nota[i] = double.Parse(notas[i], CultureInfo.InvariantCulture);
+            
             Console.WriteLine();
             
             if(aluno.Aprovado()){
