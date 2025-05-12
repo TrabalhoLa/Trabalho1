@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DiarioDeSaude.Views.MainWindow"
+        Title="Diário de Saúde"
+        x:DataType="">
+    <TabControl>
+        <TabItem Header="Novo Registro">
+            <StackPanel Margin="20">
+                <DatePicker SelectedDate="{Binding DataRegistro}"
+                           Margin="0,5"/>
+                           
+                <ComboBox Items="{Binding Humores}"
+                         SelectedItem="{Binding HumorSelecionado}"
+                         PlaceholderText="Como está seu humor hoje?"
+                         Margin="0,5"/>
+                         
+                <ComboBox Items="{Binding QualidadesSono}"
+                         SelectedItem="{Binding SonoSelecionado}"
+                         PlaceholderText="Como foi seu sono?"
+                         Margin="0,5"/>
+                         
+                <TextBox Text="{Binding AlimentacaoDescricao}"
+                        Watermark="Descreva sua alimentação"
+                        Height="100"
+                        TextWrapping="Wrap"
+                        AcceptsReturn="True"
+                        Margin="0,5"/>
+                        
+                <NumericUpDown Value="{Binding MinutosAtividade}"
+                             Watermark="Minutos de atividade física"
+                             Minimum="0"
+                             Maximum="1440"
+                             Margin="0,5"/>
+                             
+                <TextBox Text="{Binding TipoAtividade}"
+                        Watermark="Tipo de atividade física"
+                        Margin="0,5"/>
+                             
+                <StackPanel Orientation="Horizontal" 
+                          HorizontalAlignment="Right"
+                          Margin="0,20,0,0">
+                    <Button Content="Limpar"
+                            Command="{Binding LimparCommand}"
+                            Margin="5,0"/>
+                    <Button Content="Salvar"
+                            Command="{Binding SalvarCommand}"
+                            Background="Green"
+                            Foreground="White"
+                            Margin="5,0"/>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        
+        <TabItem Header="Histórico">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" 
+                          Orientation="Horizontal"
+                          Margin="10">
+                    <DatePicker SelectedDate="{Binding DataInicio}"
+                               Margin="5,0"/>
+                    <TextBlock Text="até"
+                             VerticalAlignment="Center"
+                             Margin="5,0"/>
+                    <DatePicker SelectedDate="{Binding DataFim}"
+                               Margin="5,0"/>
+                    <Button Content="Atualizar"
+                            Command="{Binding CarregarRegistrosCommand}"
+                            Margin="5,0"/>
+                </StackPanel>
+                
+                <DataGrid Items="{Binding Registros}"
+                         AutoGenerateColumns="False"
+                         IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Data" 
+                                          Binding="{Binding Data, StringFormat={}{0:dd/MM/yyyy}}" />
+                        <DataGridTextColumn Header="Humor" 
+                                          Binding="{Binding HumorDescricao}" />
+                        <DataGridTextColumn Header="Sono" 
+                                          Binding="{Binding SonoDescricao}" />
+                        <DataGridTextColumn Header="Alimentação" 
+                                          Binding="{Binding AlimentacaoDescricao}" />
+                        <DataGridTextColumn Header="Atividade" 
+                                          Binding="{Binding TipoAtividade}" />
+                        <DataGridTextColumn Header="Duração (min)" 
+                                          Binding="{Binding DuracaoMinutos}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</Window>
