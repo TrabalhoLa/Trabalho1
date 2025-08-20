@@ -1,0 +1,4 @@
+C:\Users\puyol\OneDrive\Documentos\coltec\taPOO\trabalho2\AsteroidesSinglePlayer\obj\Debug\net9.0\AsteroidesSinglePlayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\puyol\OneDrive\Documentos\coltec\taPOO\trabalho2\AsteroidesSinglePlayer\obj\Debug\net9.0\AsteroidesSinglePlayer.AssemblyInfoInputs.cache
+C:\Users\puyol\OneDrive\Documentos\coltec\taPOO\trabalho2\AsteroidesSinglePlayer\obj\Debug\net9.0\AsteroidesSinglePlayer.AssemblyInfo.cs
+C:\Users\puyol\OneDrive\Documentos\coltec\taPOO\trabalho2\AsteroidesSinglePlayer\obj\Debug\net9.0\AsteroidesSinglePlayer.csproj.CoreCompileInputs.cache
